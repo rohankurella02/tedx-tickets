@@ -1,0 +1,6 @@
+POST http://localhost:4000/ticket/get-ticket
+Content-Type: application/json
+
+{
+    "id": "10631291"
+}
