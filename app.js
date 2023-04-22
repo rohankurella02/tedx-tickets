@@ -1,11 +1,9 @@
-var createError = require('http-errors');
 var express = require('express');
 // var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
 const mclient = require('mongodb').MongoClient;
 //cors
 const cors = require('cors');
+
 
 //import path module
 const path = require('path');
@@ -18,7 +16,7 @@ var verifyTicket = require('./routes/verifyTicket');
 var app = express();
 
 //connect build of react with nodejs
-app.use(express.static(path.join(__dirname, '..', 'build')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,11 +24,9 @@ app.set('view engine', 'jade');
 app.use(cors({
     origin: '*'
 }))
-app.use(logger('dev'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -63,14 +59,14 @@ app.use('/ticket', verifyTicket);
 //get request for home page
 app.get('/', (req, res) => {
   // res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-  res.send(path.resolve(__dirname, '..', 'build', 'index.html'))
+  res.send(path.resolve(__dirname, 'build', 'index.html'))
   // res.send("hi")
 })
 
 //dealing with page refresh
 app.get('*', (req, res) => {
-  app.use(express.static(path.resolve(__dirname, '..', 'build')));
-  res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
+  app.use(express.static(path.resolve(__dirname, 'build')));
+  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
 });
 
 // catch 404 and forward to error handler
