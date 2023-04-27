@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/de44afd3-0471-4f38-89cf-1331bb6faf88/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/tedxvnr",
+    "appService.deploySubpath": "."
+}
