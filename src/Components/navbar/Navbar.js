@@ -42,48 +42,26 @@ function Navbar() {
                               <a href="/" className="linkk">
                                   <div className="menu-link">Home</div>
                               </a>
-                              <a href="/about" className="linkk">
-                                  <div className="menu-link">About</div>
+                              <a href="/search" className="linkk">
+                                  <div className="menu-link">Search</div>
                               </a>
-                              <a href="/past-editions" className="linkk">
-                                  <div className="menu-link">Past Editions</div>
+                              <a href="/login" className="linkk">
+                                  <div className="menu-link">Login</div>
                               </a>
-                              <a href="/team" className="linkk">
-                                  <div className="menu-link">Team</div>
-                              </a>
-                              <a href="/sponsors" className="linkk">
-                                  <div className="menu-link">Sponsors</div>
-                              </a>
-                              <a href="/contact-us" className="linkk">
-                                  <div className="menu-link">Contact Us</div>
-                              </a>
-                              <a href="/register" className="linkk">
-                                  <div className="menu-link">Register</div>
-                              </a>
+                              
                           </div>
                       </div>
                   </div>
               ) : (
                   <div className="navLinks">
                       <a href="/" className="link">Home</a>
-                      <a href="/about" className="link">
-                          About
+                      <a href="/search" className="link">
+                          Search
                       </a>
-                      <a href="/past-editions" className="link">
-                          Past Editions
+                      <a href="/login" className="link">
+                          Login
                       </a>
-                      <a href="/team" className="link">
-                          Team
-                      </a>
-                      <a href="/sponsors" className="link">
-                          Sponsors
-                      </a>
-                      <a href="/contact-us" className="link">
-                          Contact Us
-                      </a>
-                      <a href="/register" className="link">
-                          Register
-                      </a>
+                      
                   </div>
               )}
           </div>

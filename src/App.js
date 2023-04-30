@@ -5,6 +5,7 @@ import Qr from './Components/qrcode/Qr';
 import Home from './Components/home/Home';
 import { Routes, Route } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
+import Search from './Components/search/Search';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       {/* <Qr /> */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
     </div>
   );
