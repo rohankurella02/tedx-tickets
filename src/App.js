@@ -26,7 +26,7 @@ function App() {
     else {
       console.log('not logged in')
     }
-  })
+  }, [])
 
   return (
     <div className="App">
