@@ -2,9 +2,10 @@ import React from 'react'
 import logo from '../../assets/tedx_logo.png'
 import { useMediaQuery } from "react-responsive";
 import './Navbar.css'
+import { createClient } from '@supabase/supabase-js';
 
 function Navbar() {
-
+    const supabase = createClient('https://kljpojhmwfmckmspbmmp.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtsanBvamhtd2ZtY2ttc3BibW1wIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODI4NzM0NzAsImV4cCI6MTk5ODQ0OTQ3MH0.XGm-s5m8nninpQiWi-Xa79Qi3-_SFm0kYceM09TJGpY')
     const [isMobile, setIsMobile] = React.useState(false);
     const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1024px)" });
     const [show, setShow] = React.useState(false);
@@ -16,6 +17,11 @@ function Navbar() {
             setIsMobile(false);
         }
     }, [isTabletOrMobile]);
+
+    const logout = async () => {
+        const { error } = await supabase.auth.signOut()
+        console.log(error)
+    }
 
     const handleShow = () => {
         // e.preventDefault();
@@ -48,6 +54,9 @@ function Navbar() {
                               <a href="/login" className="linkk">
                                   <div className="menu-link">Login</div>
                               </a>
+                              <div className="linkk" onClick={logout}>
+                                  <div className="menu-link">Logout</div>
+                              </div>
                               
                           </div>
                       </div>
