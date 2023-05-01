@@ -126,7 +126,7 @@ function Qr() {
                   <option value={"user"}>Front Camera</option>
               </select>
           </div>
-          {startScan && (
+          {true && (
               <>
                   
                   <div className={startScan ? "qr_reader" : "hidden"}>
